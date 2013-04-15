@@ -29,7 +29,6 @@
         </style>
         <script type="text/javascript" src="http://blooming-stream-8059.herokuapp.com/js/jquery-1.9.1.min.js"></script>
         <script type="text/javascript" src="http://blooming-stream-8059.herokuapp.com/js/etherpad.js"></script>
-        <script src='jquery.base64.js' type='text/javascript'></script>
         <script type="text/javascript">
             console.log("Loading...");
             gadgets.util.registerOnLoadHandler(function() {

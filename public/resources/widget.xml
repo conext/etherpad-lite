@@ -1,0 +1,75 @@
+<Module>
+    <ModulePrefs 
+        title="__MSG_title__" 
+        title_url="__MSG_title_url__" 
+        directory_title="__MSG_title__" 
+        description="__MSG_description__" 
+        screenshot="__MSG_screenshot__" 
+        thumbnail="__MSG_thumbnail__" 
+        category="tools" 
+        category2="lifestyle" 
+        author="__MSG_author__" 
+        author_email="__MSG_author_email__">
+
+        <Require feature="setprefs"/>
+        <Require feature="dynamic-height"/>
+        <Require feature="opensocial-2.5"/>
+        <Require feature="osapi"/>
+        
+        <!--
+        <Locale messages="http://www.widget-dico.com/wikipedia/google/prefs/wikipedia_all.xml"/>
+        <Locale lang="fr" messages="http://www.widget-dico.com/wikipedia/google/prefs/wikipedia_fr.xml"/>
+        <Locale lang="de" messages="http://www.widget-dico.com/wikipedia/google/prefs/wikipedia_de.xml"/>
+        <Locale lang="it" messages="http://www.widget-dico.com/wikipedia/google/prefs/wikipedia_it.xml"/>
+        <Locale lang="es" messages="http://www.widget-dico.com/wikipedia/google/prefs/wikipedia_es.xml"/>
+        -->
+    </ModulePrefs>
+
+    <Content type="html">
+
+    <![CDATA[
+        
+        <style>
+            #epframeetherpad-container {
+                height: 100%;
+            }
+        </style>
+        <script type="text/javascript" src="http://blooming-stream-8059.herokuapp.com/js/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="http://blooming-stream-8059.herokuapp.com/js/etherpad.js"></script>
+        <script src='jquery.base64.js' type='text/javascript'></script>
+        <script type="text/javascript">
+            console.log("Loading...");
+            gadgets.util.registerOnLoadHandler(function() {
+                var personRequest = osapi.people.get();
+                personRequest.execute(function(peopleResponse) {
+                    var personDisplayName = peopleResponse.displayName;
+                    console.log("Person display name: " + personDisplayName);
+                    var groupRequest = osapi.groups.get();
+                    groupRequest.execute(function(groupResponse) {
+                    var firstGroupId = groupResponse.list[0].id;
+                    console.log("Retrieved first group: " + firstGroupId);
+                    var padId = firstGroupId.substr(firstGroupId.lastIndexOf(":")+1);
+                    console.log("Pad ID: " + padId);
+                    $('#etherpad_link').attr('href','http://beta.etherpad.org/p/' + padId);
+                    $('#etherpad-container').pad({
+                        'padId': padId,
+                        'useMonospacedFont': true,
+                        'showLineNumbers': true,
+                        'showChat': false,
+                        'showControls': false,
+                        'userName': personDisplayName
+                        });
+                    });
+                });
+
+            });
+        </script>
+
+        <div id="infobar">
+            Access full Group Etherpad <a id="etherpad_link" href="" target="_blank">here</a>
+            <div id="etherpad-container"></div>
+        </div>
+
+    ]]>
+    </Content>
+</Module>

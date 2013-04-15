@@ -16,13 +16,6 @@
         <Require feature="opensocial-2.5"/>
         <Require feature="osapi"/>
         
-        <!--
-        <Locale messages="http://www.widget-dico.com/wikipedia/google/prefs/wikipedia_all.xml"/>
-        <Locale lang="fr" messages="http://www.widget-dico.com/wikipedia/google/prefs/wikipedia_fr.xml"/>
-        <Locale lang="de" messages="http://www.widget-dico.com/wikipedia/google/prefs/wikipedia_de.xml"/>
-        <Locale lang="it" messages="http://www.widget-dico.com/wikipedia/google/prefs/wikipedia_it.xml"/>
-        <Locale lang="es" messages="http://www.widget-dico.com/wikipedia/google/prefs/wikipedia_es.xml"/>
-        -->
     </ModulePrefs>
 
     <Content type="html">

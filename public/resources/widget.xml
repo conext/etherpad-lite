@@ -37,13 +37,13 @@
                     console.log("Person display name: " + personDisplayName);
                     var groupRequest = osapi.groups.get();
                     groupRequest.execute(function(groupResponse) {
-                    var firstGroupId = groupResponse.list[0].id;
-                    console.log("Retrieved first group: " + firstGroupId);
-                    var padId = firstGroupId.substr(firstGroupId.lastIndexOf(":")+1);
-                    console.log("Pad ID: " + padId);
-                    $('#etherpad_link').attr('href','http://beta.etherpad.org/p/' + padId);
+                        var firstGroupId = groupResponse.list[0].id;
+                        console.log("Retrieved first group: " + firstGroupId);
+                        var padId = firstGroupId.substr(firstGroupId.lastIndexOf(":")+1);
+                        console.log("Pad ID: " + padId);
+                        $('#etherpad_link').attr('href','http://beta.etherpad.org/p/' + padId);
+                    });
                 });
-
             });
         </script>
 
@@ -75,22 +75,21 @@
                     console.log("Person display name: " + personDisplayName);
                     var groupRequest = osapi.groups.get();
                     groupRequest.execute(function(groupResponse) {
-                    var firstGroupId = groupResponse.list[0].id;
-                    console.log("Retrieved first group: " + firstGroupId);
-                    var padId = firstGroupId.substr(firstGroupId.lastIndexOf(":")+1);
-                    console.log("Pad ID: " + padId);
-                    $('#etherpad_link').attr('href','http://beta.etherpad.org/p/' + padId);
-                    $('#etherpad-container').pad({
-                        'padId': padId,
-                        'useMonospacedFont': true,
-                        'showLineNumbers': true,
-                        'showChat': false,
-                        'showControls': false,
-                        'userName': personDisplayName
+                        var firstGroupId = groupResponse.list[0].id;
+                        console.log("Retrieved first group: " + firstGroupId);
+                        var padId = firstGroupId.substr(firstGroupId.lastIndexOf(":")+1);
+                        console.log("Pad ID: " + padId);
+                        $('#etherpad_link').attr('href','http://beta.etherpad.org/p/' + padId);
+                        $('#etherpad-container').pad({
+                            'padId': padId,
+                            'useMonospacedFont': true,
+                            'showLineNumbers': true,
+                            'showChat': false,
+                            'showControls': false,
+                            userName': personDisplayName
                         });
                     });
                 });
-
             });
         </script>
 

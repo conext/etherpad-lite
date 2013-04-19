@@ -41,7 +41,7 @@
                             var groupId = groupList[i].id;
                             var padId = groupId.substr(groupId.lastIndexOf(":")+1);
                             console.log("Pad ID: " + padId);
-                            var a = $('<a/>').attr('href',http://beta.etherpad.org/p/' + padId)
+                            var a = $('<a/>').attr('href',http://beta.etherpad.org/p/' + padId);
                             a.text(padId);
                             a.attr('target','_blank');
                             a.appendTo(li);

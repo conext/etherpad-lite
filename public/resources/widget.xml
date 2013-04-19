@@ -21,12 +21,7 @@
     <!-- Default view -->
     <Content view="default" type="html">
     <![CDATA[
-        
-        <style>
-            #epframeetherpad-container {
-                height: 100%;
-            }
-        </style>
+        <link rel="stylesheet" href="https://etherpad-lite.identitylabs.org/css/style.css" type="text/css" />
         <script type="text/javascript" src="https://etherpad-lite.identitylabs.org/js/jquery-1.9.1.min.js"></script>
         <script type="text/javascript">
             console.log("Loading...");

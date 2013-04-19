@@ -76,7 +76,7 @@
                             'showLineNumbers': true,
                             'showChat': false,
                             'showControls': false,
-                            userName': personDisplayName
+                            'userName': personDisplayName
                         });
                     });
                 });

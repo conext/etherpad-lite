@@ -54,11 +54,6 @@
     <Content view="canvas">
     <![CDATA[
         
-        <style>
-            #epframeetherpad-container {
-                height: 100%;
-            }
-        </style>
         <script type="text/javascript" src="https://etherpad-lite.identitylabs.org/js/jquery-1.9.1.min.js"></script>
         <script type="text/javascript" src="https://etherpad-lite.identitylabs.org/js/etherpad.js"></script>
         <script type="text/javascript">

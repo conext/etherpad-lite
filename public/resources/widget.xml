@@ -1,15 +1,15 @@
 <Module>
     <ModulePrefs 
-        title="__MSG_title__" 
-        title_url="__MSG_title_url__" 
-        directory_title="__MSG_title__" 
-        description="__MSG_description__" 
-        screenshot="__MSG_screenshot__" 
-        thumbnail="__MSG_thumbnail__" 
+        title="Etherpad Lite" 
+        title_url="Etherpad Lite" 
+        directory_title="Dir" 
+        description="Etherpad Lite Application" 
+        screenshot="http://ryanpricemedia.com/images/etherpad.png" 
+        thumbnail="http://ryanpricemedia.com/images/etherpad.png" 
         category="tools" 
-        category2="lifestyle" 
-        author="__MSG_author__" 
-        author_email="__MSG_author_email__">
+        category2="productivity" 
+        author="Cloud Identity Limited - http://www.cloudidentity.co.uk" 
+        author_email="info@cloudidentity.co.uk">
 
         <Require feature="setprefs"/>
         <Require feature="dynamic-height"/>

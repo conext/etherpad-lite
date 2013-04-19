@@ -59,7 +59,7 @@
             });
         </script>
 
-        <img src="https://etherpad-lite.identitylabs.org/images/etherpad.gif"/>
+        <img src="https://etherpad-lite.identitylabs.org/images/etherpad.gif" width="100%"/>
         <div id="infobar">
             View the Etherpad for your group:  <br />
             <ul class="etherpad_max_links">

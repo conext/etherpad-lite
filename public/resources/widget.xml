@@ -41,7 +41,10 @@
                             var groupId = groupList[i].id;
                             var padId = groupId.substr(groupId.lastIndexOf(":")+1);
                             console.log("Pad ID: " + padId);
-                            $('<a/>').attr('href',http://beta.etherpad.org/p/' + padId).text(padId).attr('target','_blank').appendTo(li);
+                            var a = $('<a/>').attr('href',http://beta.etherpad.org/p/' + padId)
+                            a.text(padId);
+                            a.attr('target','_blank');
+                            a.appendTo(li);
                         });
                     });
                 });

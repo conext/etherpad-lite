@@ -18,8 +18,45 @@
         
     </ModulePrefs>
 
-    <Content type="html">
+    <!-- Default view -->
+    <Content view="default" type="html">
+    <![CDATA[
+        
+        <style>
+            #epframeetherpad-container {
+                height: 100%;
+            }
+        </style>
+        <script type="text/javascript" src="http://blooming-stream-8059.herokuapp.com/js/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript">
+            console.log("Loading...");
+            gadgets.util.registerOnLoadHandler(function() {
+                var personRequest = osapi.people.get();
+                personRequest.execute(function(peopleResponse) {
+                    var personDisplayName = peopleResponse.displayName;
+                    console.log("Person display name: " + personDisplayName);
+                    var groupRequest = osapi.groups.get();
+                    groupRequest.execute(function(groupResponse) {
+                    var firstGroupId = groupResponse.list[0].id;
+                    console.log("Retrieved first group: " + firstGroupId);
+                    var padId = firstGroupId.substr(firstGroupId.lastIndexOf(":")+1);
+                    console.log("Pad ID: " + padId);
+                    $('#etherpad_link').attr('href','http://beta.etherpad.org/p/' + padId);
+                });
 
+            });
+        </script>
+
+        <div id="infobar">
+            Access your Group Etherpad in a separate window by clicking <a id="etherpad_link" href="" target="_blank">here</a>.<br/>
+            You can also maximize this window to view your Group Etherpad.
+        </div>
+
+    ]]>
+    </Content>
+
+    <!-- View when maximized -->
+    <Content view="canvas">
     <![CDATA[
         
         <style>
@@ -58,7 +95,6 @@
         </script>
 
         <div id="infobar">
-            Access full Group Etherpad <a id="etherpad_link" href="" target="_blank">here</a>
             <div id="etherpad-container"></div>
         </div>
 

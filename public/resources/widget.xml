@@ -24,7 +24,7 @@
         <link rel="stylesheet" href="https://etherpad-lite.identitylabs.org/css/style.css" type="text/css" />
         <script type="text/javascript" src="https://etherpad-lite.identitylabs.org/js/jquery-1.9.1.min.js"></script>
         <script type="text/javascript">
-            console.log("Loading...");
+            console.log("Loading home view...");
             gadgets.util.registerOnLoadHandler(function() {
                 var personRequest = osapi.people.get();
                 personRequest.execute(function(peopleResponse) {
@@ -32,19 +32,25 @@
                     console.log("Person display name: " + personDisplayName);
                     var groupRequest = osapi.groups.get();
                     groupRequest.execute(function(groupResponse) {
-                        var firstGroupId = groupResponse.list[0].id;
-                        console.log("Retrieved first group: " + firstGroupId);
-                        var padId = firstGroupId.substr(firstGroupId.lastIndexOf(":")+1);
-                        console.log("Pad ID: " + padId);
-                        $('#etherpad_link').attr('href','http://beta.etherpad.org/p/' + padId);
+                        var groupList = groupResponse.list;
+                        var groupListDiv = $('ul.etherpad_links');
+                        $.each(groupList, function(i)
+                        {
+                            console.log("Processing group: " + groupList[i]);
+                            var li = $('<li/>').appendTo(groupListDiv);
+                            var padId = groupList[i].substr(firstGroupId.lastIndexOf(":")+1);
+                            console.log("Pad ID: " + padId);
+                            $('<a/>').text('href','http://beta.etherpad.org/p/' + padId).appendTo(li);
+                        });
                     });
                 });
             });
         </script>
 
         <div id="infobar">
-            Access your Group Etherpad in a separate window by clicking <a id="etherpad_link" href="" target="_blank">here</a>.<br/>
-            You can also maximize this window to view your Group Etherpad.
+            Access the Etherpad for your group:  <br />
+            <ul class="etherpad_links">
+            </ul>
         </div>
 
     ]]>
@@ -74,8 +80,8 @@
                             'padId': padId,
                             'useMonospacedFont': true,
                             'showLineNumbers': true,
-                            'showChat': false,
-                            'showControls': false,
+                            'showChat': true,
+                            'showControls': true,
                             'userName': personDisplayName
                         });
                     });

@@ -24,6 +24,13 @@
         <link rel="stylesheet" href="https://etherpad-lite.identitylabs.org/css/style.css" type="text/css" />
         <script type="text/javascript" src="https://etherpad-lite.identitylabs.org/js/jquery-1.9.1.min.js"></script>
         <script type="text/javascript">
+            function navigateTo(dest) {
+                var supported_views = gadgets.views.getSupportedViews();
+                gadgets.views.requestNavigateTo(supported_views[dest]);
+            }
+            function gotoCanvas() {
+                navigateTo("canvas");
+            }
             console.log("Loading home view...");
             gadgets.util.registerOnLoadHandler(function() {
                 var personRequest = osapi.people.get();
@@ -33,11 +40,12 @@
                     var groupRequest = osapi.groups.get();
                     groupRequest.execute(function(groupResponse) {
                         var groupList = groupResponse.list;
-                        var groupListDiv = $('ul.etherpad_links');
+                        var etherpadLinksDiv = $('ul.etherpad_links');
+                        var etherpadMaxLinksDiv = $('ul.etherpad_max_links');
                         $.each(groupList, function(i)
                         {
                             console.log("Processing group: " + groupList[i].id);
-                            var li = $('<li/>').appendTo(groupListDiv);
+                            var li = $('<li/>').appendTo(etherpadLinksDiv);
                             var groupId = groupList[i].id;
                             var padId = groupId.substr(groupId.lastIndexOf(":")+1);
                             console.log("Pad ID: " + padId);
@@ -51,8 +59,12 @@
             });
         </script>
 
+        <img src="https://etherpad-lite.identitylabs.org/images/etherpad.gif"/>
         <div id="infobar">
-            Access the Etherpad for your group:  <br />
+            View the Etherpad for your group:  <br />
+            <ul class="etherpad_max_links">
+            </ul>
+            Access full-browser Etherpad for your group:  <br />
             <ul class="etherpad_links">
             </ul>
         </div>

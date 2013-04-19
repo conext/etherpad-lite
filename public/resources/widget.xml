@@ -36,9 +36,10 @@
                         var groupListDiv = $('ul.etherpad_links');
                         $.each(groupList, function(i)
                         {
-                            console.log("Processing group: " + groupList[i]);
+                            console.log("Processing group: " + groupList[i].id);
                             var li = $('<li/>').appendTo(groupListDiv);
-                            var padId = groupList[i].substr(groupList[i].lastIndexOf(":")+1);
+                            var groupId = groupList[i].id;
+                            var padId = groupId.substr(groupId.lastIndexOf(":")+1);
                             console.log("Pad ID: " + padId);
                             $('<a/>').text('href','http://beta.etherpad.org/p/' + padId).appendTo(li);
                         });

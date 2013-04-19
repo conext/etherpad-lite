@@ -27,7 +27,7 @@
                 height: 100%;
             }
         </style>
-        <script type="text/javascript" src="http://blooming-stream-8059.herokuapp.com/js/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="https://etherpad-lite.identitylabs.org/js/jquery-1.9.1.min.js"></script>
         <script type="text/javascript">
             console.log("Loading...");
             gadgets.util.registerOnLoadHandler(function() {
@@ -64,8 +64,8 @@
                 height: 100%;
             }
         </style>
-        <script type="text/javascript" src="http://blooming-stream-8059.herokuapp.com/js/jquery-1.9.1.min.js"></script>
-        <script type="text/javascript" src="http://blooming-stream-8059.herokuapp.com/js/etherpad.js"></script>
+        <script type="text/javascript" src="https://etherpad-lite.identitylabs.org/js/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="https://etherpad-lite.identitylabs.org/js/etherpad.js"></script>
         <script type="text/javascript">
             console.log("Loading...");
             gadgets.util.registerOnLoadHandler(function() {

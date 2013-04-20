@@ -85,6 +85,7 @@
     <Content view="canvas">
     <![CDATA[
         
+        <link rel="stylesheet" href="https://etherpad-lite.identitylabs.org/css/style.css" type="text/css" />
         <script type="text/javascript" src="https://etherpad-lite.identitylabs.org/js/jquery-1.9.1.min.js"></script>
         <script type="text/javascript" src="https://etherpad-lite.identitylabs.org/js/etherpad.js"></script>
         <script type="text/javascript">

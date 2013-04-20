@@ -57,8 +57,8 @@
                             var li2 = $('<li/>').appendTo(etherpadMaxLinksDiv);
                             var params = { 'groupId' : padId };
                             var a2 = $('<a/>').prop('onlick', gotoCanvas(params));
-                            a2.text(padId);
                             a2.attr('href','#');
+                            a2.text(padId);
                             a2.appendTo(li2);
                         });
                     });

@@ -15,6 +15,7 @@
         <Require feature="dynamic-height"/>
         <Require feature="opensocial-2.5"/>
         <Require feature="osapi"/>
+        <Require feature="views"/> 
         
     </ModulePrefs>
 

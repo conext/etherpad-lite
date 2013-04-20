@@ -57,7 +57,15 @@
                             var li2 = $('<li/>').appendTo(etherpadMaxLinksDiv);
                             var params = { 'groupId' : padId };
                             var a2 = $('<a/>');
-                            a2.click = gotoCanvas(params);
+                            a2.click(function(e) {
+                                var $target = $(e.target);
+                                var launch = $('a.launch', this);
+                                if (launch.size() > 0) 
+                                { 
+                                  eval(launch[0].onclick());
+                                }
+                            });
+                            gotoCanvas(params);
                             a2.attr('href','#');
                             a2.text(padId);
                             a2.appendTo(li2);

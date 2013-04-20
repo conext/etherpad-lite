@@ -102,10 +102,13 @@
                         var firstGroupId = groupResponse.list[0].id;
                         console.log("Retrieved first group: " + firstGroupId);
                         var padId = firstGroupId.substr(firstGroupId.lastIndexOf(":")+1);
-                        console.log("Pad ID: " + padId);
+                        console.log("First pad ID: " + padId);
                         var prefs = gadgets.views.getParams();
                         if (prefs) {
                             padId = prefs['groupId'];
+                            console.log('GroupID: ' + padId);
+                        } else {
+                            console.log('GroupID information not present in the request.');
                         }
                         $('#etherpad_link').attr('href','http://beta.etherpad.org/p/' + padId);
                         $('#etherpad-container').pad({

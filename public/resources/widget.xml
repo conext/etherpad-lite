@@ -55,7 +55,7 @@
                             a.appendTo(li);
 
                             var li2 = $('<li/>').appendTo(etherpadMaxLinksDiv);
-                            var a2 = $('<a/>').prop('onlick', 'gotoCanvas({' + padId + '});');
+                            var a2 = $('<a/>').prop('onlick', gotoCanvas({padId}));
                             a2.text(padId);
                             a2.attr('href','#');
                             a2.appendTo(li2);

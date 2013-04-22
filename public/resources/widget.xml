@@ -83,7 +83,7 @@
     ]]>
     </Content>
 
-    <!-- View when maximized -->
+    <!-- Maximized view -->
     <Content view="canvas">
     <![CDATA[
         
